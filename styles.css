@@ -1,14 +1,19 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 .modal {
-  transition: 200ms ease-in-out;
   position: fixed;
   top: 50%;
   left: 50%;
-  max-width: 80%;
   transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
   border: 1px solid black;
   border-radius: 10px;
   z-index: 10;
   background-color: white;
+  width: 500px;
+  max-width: 80%;
 }
 
 .modal.active {
@@ -23,16 +28,16 @@
   border-bottom: 1px solid black;
 }
 
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  color: black;
+.modal-header .title {
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.modal-header .title {
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -43,9 +48,8 @@
 
 #overlay {
   position: fixed;
-  transition: 200ms ease-in-out;
   opacity: 0;
-  z-index: 9;
+  transition: 200ms ease-in-out;
   top: 0;
   left: 0;
   right: 0;
